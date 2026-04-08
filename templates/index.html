@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Bakery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🎂 Welcome to Harmony Bakery</h1>
+        <p>Freshly baked with love, every single day</p>
+    </header>
+    <main>
+        <h2>Our Cake Collection</h2>
+        <div class="cake-grid">
+            {% for cake in cakes %}
+            <div class="cake-card">
+                <h3>{{ cake.name }}</h3>
+                <p class="price">{{ cake.price }}</p>
+                <p class="desc">{{ cake.desc }}</p>
+                <button>Order Now</button>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Harmony Bakery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
